@@ -1,4 +1,5 @@
-Django==5.0.7
-gunicorn==21.1.0
-pandas==1.4.3
-openpyxl==3.0.10
+Django
+gunicorn
+pandas
+openpyxl
+numpy
