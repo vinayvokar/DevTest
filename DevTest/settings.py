@@ -28,7 +28,7 @@ DEBUG = True
 ALLOWED_HOSTS = [
     'localhost',
     '127.0.0.1',
-    'devtest-5rmb.onrender.com',  # New Render app domain
+    'devtest-h5au.onrender.com',  # New Render app domain
 ]
 
 
