@@ -1,0 +1,32 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Upload CSV/XLSX</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+</head>
+<body>
+    <div class="container">
+        <div class="card">
+            <h1>Upload CSV or XLSX File</h1>
+            <form method="POST" enctype="multipart/form-data">
+                {% csrf_token %}
+                <input type="file" name="file" accept=".csv, .xlsx" required>
+                <button type="submit">Upload</button>
+            </form>
+            
+            {% if summary %}
+                <h2>Summary:</h2>
+                <pre><strong>{{ summary }}</strong></pre>
+            {% endif %}
+            
+            {% if data_table %}
+                <h2>Data Table:</h2>
+                <div >{{ data_table|safe }}</div>  <!-- Display the DataFrame as HTML -->
+            {% endif %}
+        </div>
+    </div>
+</body>
+</html>
