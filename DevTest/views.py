@@ -18,7 +18,7 @@ def custom_dataframe_summary(df):
 
 
 def upload_file(request):
-    summary = ""
+    info_summary = ""
     data_table = ""
     if request.method == 'POST':
         # Check if 'file' key exists in request.FILES
