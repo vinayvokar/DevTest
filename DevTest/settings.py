@@ -11,6 +11,9 @@ https://docs.djangoproject.com/en/5.0/ref/settings/
 """
 
 from pathlib import Path
+import django_heroku
+import dj_database_url
+import os
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -26,9 +29,7 @@ SECRET_KEY = 'django-insecure-sbmcnk%^hlmg-+1ect_jm6!_$*nlrqcxs_0%mwgxq*h5&varh9
 DEBUG = True
 
 ALLOWED_HOSTS = [
-    'localhost',
-    '127.0.0.1',
-    'devtest-h5au.onrender.com',  # New Render app domain
+    '*'
 ]
 
 
@@ -125,6 +126,9 @@ STATICFILES_DIRS=[
     BASE_DIR,"static"
 ]
 
+STATIC_ROOT=os.path.join(BASE_DIR,'staticfile')
+STATICFILES_DIRS=(os.path.join(BASE_DIR,'static'))
+
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
@@ -140,3 +144,6 @@ EMAIL_USE_TLS = True
 EMAIL_HOST_USER = 'demo911check@gmail.com'
 EMAIL_HOST_PASSWORD = 'tcpi qboj sgzb bufs'
 DEFAULT_FROM_EMAIL = 'demo911check@gmail.com'
+
+
+django_heroku,settings(locals())
